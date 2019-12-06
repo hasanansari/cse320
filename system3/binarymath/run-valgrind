@@ -1,0 +1,3 @@
+#!/bin/sh
+
+valgrind --leak-check=yes --suppressions=/user/cse320/files/valgrind.suppress ./binarymath

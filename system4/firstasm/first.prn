@@ -1,0 +1,48 @@
+ARM GAS  /tmp/ccicc4vH.s 			page 1
+
+
+   1              	# 1 "first.S"
+   1              	@
+   1              	...
+   0              	
+   0              	
+   1              	/* Copyright (C) 1991-2016 Free Software Foundation, Inc.
+   2              	@ My first assembly language program
+   3              	@ Name: Gabby Kelsch Bledsoe
+   4              	@
+   5              	
+   6              	.text
+   7              	.global first
+   8              	
+   9              	first:
+  10 0000 0010A0E3 	  mov r1, #0 @ cnt
+  11              	  @ initialization / i=0
+  12 0004 0020A0E3 	  mov r2, #0 @i
+  13              	
+  14              	forloop:
+  15              	  @ the test / i != 32
+  16 0008 203052E2 	  subs r3, r2, #32 @r3 = i-32
+  17 000c 0400000A 	  beq loopend   @if i==32
+  18              	
+  19 0010 013090E2 	  adds r3, r0, #1 @r0 & 1
+  20 0014 01108112 	  addne r1, r1, #1  @ cnt++
+  21              	
+  22 0018 A000A0E1 	  lsr r0, r0, #1  @value >>= 1
+  23              	
+  24              	  @ increment / i++
+  25 001c 012082E2 	  add r2, r2, #1  @i++
+  26 0020 F8FFFFEA 	  b forloop
+  27              	
+  28              	loopend:
+  29 0024 0100A0E1 	  mov r0, r1
+  30 0028 1EFF2FE1 	  bx lr
+ARM GAS  /tmp/ccicc4vH.s 			page 2
+
+
+DEFINED SYMBOLS
+             first.S:9      .text:00000000 first
+             first.S:10     .text:00000000 $a
+             first.S:14     .text:00000008 forloop
+             first.S:28     .text:00000024 loopend
+
+NO UNDEFINED SYMBOLS
